@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, SafeAreaView } from "react-native";
+import Listcard from "./components/Listcard";
+import * as data from "./static/data/db.json";
 
 export default function App() {
+  const currencies = data.currencies;
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <FlatList
+        data={currencies}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Listcard
+            title={item.symbol}
+            subTitle={item.name}
+            image={item.image}
+            onPress={() => console.log(item)}
+            price={item.price}
+            changeRate={item.changeRate}
+          />
+        )}
+      />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
