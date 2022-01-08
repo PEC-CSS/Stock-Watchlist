@@ -4,6 +4,7 @@ import { Card } from './components/card/Card'
 
 export default function App() {
   return (
+    //just added to check the rendering of card component, can remove
     <View style={styles.container}>
       <Card 
       name="Bitcoin"
