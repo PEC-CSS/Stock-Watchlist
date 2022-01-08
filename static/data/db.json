@@ -1,0 +1,84 @@
+{
+    "currencies": [
+        {
+            "id": 0,
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+            "price": 41959.66,
+            "changeRate": 15.31
+        },
+        {
+            "id": 1,
+            "name": "Ethereum",
+            "symbol": "ETH",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+            "price": 3202.39,
+            "changeRate": -2.10
+        },
+        {
+            "id": 2,
+            "name": "Tether",
+            "symbol": "USDT",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/825.png",
+            "price": 1,
+            "changeRate": -0.04
+        },
+        {
+            "id": 3,
+            "name": "Binance Coin",
+            "symbol": "BNB",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+            "price": 454.67,
+            "changeRate": -12.16
+        },
+        {
+            "id": 4,
+            "name": "Solana",
+            "symbol": "SOL",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+            "price": 145.50,
+            "changeRate": 15.31
+        },
+        {
+            "id": 5,
+            "name": "Cardano",
+            "symbol": "ADA",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png",
+            "price": 1.24,
+            "changeRate": -7.33
+        },
+        {
+            "id": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
+            "price": 0.9996,
+            "changeRate": -0.06
+        },
+        {
+            "id": 7,
+            "name": "Ripple",
+            "symbol": "XRP",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+            "price": 0.7681,
+            "changeRate": 8.64
+        },
+        {
+            "id": 8,
+            "name": "Terra",
+            "symbol": "LUNA",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png",
+            "price": 70.16,
+            "changeRate": -20.26
+        },
+        {
+            "id": 9,
+            "name": "Polkadot",
+            "symbol": "DOT",
+            "image": "https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png",
+            "price": 25.14,
+            "changeRate": 3.78
+        }
+    ]
+}
