@@ -1,9 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Card } from './components/card/Card'
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Card 
+      name="Bitcoin"
+      symbol="BTC"
+      image="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"
+      price={41959.66}
+      changeRate={15.31}/>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
