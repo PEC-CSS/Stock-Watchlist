@@ -16,6 +16,14 @@ function Listcard({
   price,
   changeRate,
 }) {
+  function colorfun() {
+    let a = changeRate;
+    console.log(a);
+    if (changeRate > 0) {
+      return "#00E59F";
+    }
+    return "#FC7682";
+  }
   return (
     <TouchableHighlight underlayColor="#f8f4f4" onPress={onPress}>
       <View style={styles.container}>
@@ -36,9 +44,22 @@ function Listcard({
             ${price}
           </Text>
           {subTitle && (
-            <Text style={styles.subTitle} numberOfLines={2}>
-              {changeRate}
-            </Text>
+            <View
+              style={{
+                backgroundColor: colorfun(),
+                borderRadius: 10,
+                paddingVertical: 6,
+                position: "absolute",
+                marginTop: 20,
+                right: 0,
+                width: 68,
+                textAlign: "center",
+              }}
+            >
+              <Text style={styles.rate} numberOfLines={1}>
+                {changeRate}%
+              </Text>
+            </View>
           )}
         </View>
       </View>
@@ -63,16 +84,25 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     justifyContent: "flex-end",
   },
+  leftdetailsContainer: {
+    alignSelf: "flex-start",
+    marginTop: 2,
+  },
   image: {
-    width: 70,
-    height: 70,
+    width: 50,
+    height: 50,
     borderRadius: 35,
+  },
+  rate: {
+    fontWeight: "400",
+    color: "white",
   },
   subTitle: {
     color: "#6e6969",
   },
   title: {
-    fontWeight: "500",
+    fontWeight: "600",
+    fontSize: 16,
   },
 });
 
