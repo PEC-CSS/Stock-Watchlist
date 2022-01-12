@@ -1,15 +1,22 @@
 import React from "react";
-import { Button, FlatList, SafeAreaView, View } from "react-native";
+import { 
+    Button, 
+    FlatList, 
+    SafeAreaView, 
+    StyleSheet,
+    View,
+} from "react-native";
 import Listcard from "../components/Listcard";
 import useAuth from "../hooks/useAuth";
 import * as data from '../static/data/db.json';
+import Constants from "expo-constants";
 
 export default function StockScreen() {
     const currencies = data.currencies;
     const { logout } = useAuth();
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.screen}>
             <View>
                 <Button title='Logout' onPress={logout} />
             </View>
@@ -30,3 +37,11 @@ export default function StockScreen() {
         </SafeAreaView>
     );
 };
+
+const styles = StyleSheet.create({
+    screen: {
+      flex: 1,
+      paddingTop: Constants.statusBarHeight,
+    },
+  });
+  
