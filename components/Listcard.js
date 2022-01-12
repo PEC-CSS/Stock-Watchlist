@@ -17,8 +17,6 @@ function Listcard({
   changeRate,
 }) {
   function colorfun() {
-    let a = changeRate;
-    console.log(a);
     if (changeRate > 0) {
       return "#00E59F";
     }
@@ -94,6 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   rate: {
+    textAlign: "center",
     fontWeight: "400",
     color: "white",
   },

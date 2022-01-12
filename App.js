@@ -1,11 +1,12 @@
-import { FlatList, SafeAreaView } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet } from "react-native";
 import Listcard from "./components/Listcard";
 import * as data from "./static/data/db.json";
+import Constants from "expo-constants";
 
 export default function App() {
   const currencies = data.currencies;
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.screen}>
       <FlatList
         data={currencies}
         keyExtractor={(item) => item.id}
@@ -23,3 +24,9 @@ export default function App() {
     </SafeAreaView>
   );
 }
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+  },
+});
