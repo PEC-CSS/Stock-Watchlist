@@ -7,12 +7,13 @@ import {
     signOut,
 } from '@firebase/auth';
 import { auth } from '../firebase';
+import { ANDROID_CLIENT_ID, IOS_CLIENT_ID } from '@env';
 
 const AuthContext = createContext({});
 
 const config = {
-    androidClientId: '316148951749-eg5o8km0k13u03b8r32phi6v6f8vr3dn.apps.googleusercontent.com',
-    iosClientId: '316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com',
+    androidClientId: ANDROID_CLIENT_ID,
+    iosClientId: IOS_CLIENT_ID,
     scopes: ['profile', 'email'],
     permissions: ['public_profile', 'email'],
 };
