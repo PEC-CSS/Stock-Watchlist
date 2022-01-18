@@ -10,6 +10,7 @@ import Listcard from "../components/Listcard";
 import useAuth from "../hooks/useAuth";
 import * as data from '../static/data/db.json';
 import Constants from "expo-constants";
+import Header from "../components/header/headerLoginPage";
 
 export default function StockScreen() {
     const currencies = data.currencies;
@@ -17,9 +18,7 @@ export default function StockScreen() {
 
     return (
         <SafeAreaView style={styles.screen}>
-            <View>
-                <Button title='Logout' onPress={logout} />
-            </View>
+            <Header />
             <FlatList 
                 data={currencies}
                 keyExtractor={(item) => item.id}
@@ -34,14 +33,17 @@ export default function StockScreen() {
                     />
                 )}
             />
+            <View>
+                <Button title='Logout' onPress={logout} color={'#0a2351'}/>
+            </View>
         </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     screen: {
-      flex: 1,
-      paddingTop: Constants.statusBarHeight,
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#F0F8FF'
     },
-  });
-  
+});

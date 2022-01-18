@@ -70,7 +70,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     padding: 15,
-    backgroundColor: "#fff",
+    backgroundColor: "#F0F8FF",
+    borderBottomWidth: 3,
+    borderBottomColor: 'white',
   },
   detailsContainer: {
     flex: 1,
