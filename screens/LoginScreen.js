@@ -27,8 +27,7 @@ const LoginScreen = () => {
             <Header />
             <ScrollView>
                 <Text style={s1.slogan}>
-                    CHECK BEFORE 
-                    YOU INVEST
+                    CHECK BEFORE YOU INVEST
                 </Text>
                 <View style={s1.imageContainer}>
                     <Image style={s1.image} source={require('../assets/stock.png')} />

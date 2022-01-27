@@ -13,39 +13,10 @@ import { useNavigation } from '@react-navigation/core';
 import { X_MESSARI_API_KEY } from '@env';
 import Listcard from '../components/Listcard';
 import useAuth from '../hooks/useAuth';
+import * as data from '../static/data/db.json';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
-
-const Search = ({ data }) => {
-	const navigation = useNavigation();
-
-	return (
-		<View style={styles.container}>
-			<View style={styles.searchBar__unclicked}>
-				{/* Search Icon */}
-				<Feather
-					name='search'
-					size={20}
-					color='black'
-					style={{ marginLeft: 1 }}
-				/>
-				{/* Input Field */}
-				<TextInput
-					style={styles.input}
-					placeholder='Search'
-					// value={props.searchPhrase}
-					// onChangeText={props.setSearchPhrase}
-					onFocus={() => {
-						navigation.navigate('Search', {
-							clicked: true,
-							data: data,
-						});
-					}}
-				/>
-			</View>
-		</View>
-	);
-};
+import Navbar from '../components/navbar/navbarBottom';
 
 export default function StockScreen() {
 	const { logout } = useAuth();
@@ -69,7 +40,7 @@ export default function StockScreen() {
 	return (
 		<SafeAreaView style={styles.screen}>
 			<Header />
-			{console.log(!cryptoData.data.length)}
+			{/* {console.log(!cryptoData.data.length)} */}
 			{!cryptoData.data.length ? (
 				<ActivityIndicator
 					size={'large'}
@@ -78,7 +49,7 @@ export default function StockScreen() {
 				/>
 			) : (
 				<>
-					<Search data={cryptoData.data} />
+					{/* <Search data={cryptoData.data} /> */}
 					<FlatList
 						data={cryptoData.data}
 						keyExtractor={(item) => item.id}
@@ -109,11 +80,9 @@ export default function StockScreen() {
 							/>
 						)}
 					/>
+					<Navbar />
 				</>
 			)}
-			<View>
-				<Button title='Logout' onPress={logout} color={'#0a2351'} />
-			</View>
 		</SafeAreaView>
 	);
 }

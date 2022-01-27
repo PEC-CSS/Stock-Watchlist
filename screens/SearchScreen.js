@@ -18,7 +18,6 @@ const SearchScreen = (props) => {
 	return (
 		<SafeAreaView style={styles.root}>
 			{/* <HeaderLogin /> */}
-			{!clicked && <Text>Search for Stocks</Text>}
 			<SearchBar
 				searchPhrase={searchPhrase}
 				setSearchPhrase={setSearchPhrase}
@@ -43,13 +42,8 @@ const SearchScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
-	screen: {
-		flex: 1,
-		paddingTop: Constants.statusBarHeight,
-		backgroundColor: '#F0F8FF',
-	},
 	root: {
-		paddingTop: Constants.statusBarHeight,
+		marginTop: Constants.statusBarHeight,
 		backgroundColor: '#F0F8FF',
 		justifyContent: 'center',
 		alignItems: 'center',
