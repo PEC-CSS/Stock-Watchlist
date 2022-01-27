@@ -14,6 +14,7 @@ import * as localdata from '../static/data/db.json';
 const SearchScreen = (props) => {
     const currencies = localdata.currencies;
     // console.log(currencies);
+	const data = props.route.params.data;
 	const [searchPhrase, setSearchPhrase] = useState('');
 	const [clicked, setClicked] = useState( props.route.params.clicked | false);
 	const [fakeData, setFakeData] = useState();
@@ -41,12 +42,12 @@ const SearchScreen = (props) => {
 				setClicked={setClicked}
 			/>
 			{/* {!fakeData ? ( */}
-			{!currencies ? (
+			{!data ? (
 				<ActivityIndicator size='large' />
 			) : (
 				<List
 					searchPhrase={searchPhrase}
-					data={currencies}
+					data={data}
 					// data={fakeData}
 					setClicked={setClicked}
 				/>
