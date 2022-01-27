@@ -1,25 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import {
 	ActivityIndicator,
-	Button,
 	FlatList,
 	SafeAreaView,
 	StyleSheet,
-	TextInput,
-	View,
 } from 'react-native';
-import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/core';
 import { X_MESSARI_API_KEY } from '@env';
 import Listcard from '../components/Listcard';
-import useAuth from '../hooks/useAuth';
-import * as data from '../static/data/db.json';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
-import Navbar from '../components/navbar/navbarBottom';
 
 export default function StockScreen() {
-	const { logout } = useAuth();
 	const [cryptoData, setCrytpoData] = useState({ data: [] });
 	const a = 10;
 
@@ -82,7 +73,6 @@ export default function StockScreen() {
 					/>
 				</>
 			)}
-			<Navbar data={cryptoData.data} />
 		</SafeAreaView>
 	);
 }

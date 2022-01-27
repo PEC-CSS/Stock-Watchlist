@@ -2,9 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import useAuth from '../hooks/useAuth';
 import LoginScreen from '../screens/LoginScreen';
-import SearchScreen from '../screens/SearchScreen';
-import StockScreen from '../screens/StockScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import TabNavigator from './TabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,11 +16,7 @@ const StackNavigator = () => {
 			}}
 		>
 			{user ? (
-				<>
-					<Stack.Screen name='Stocks' component={StockScreen} />
-					<Stack.Screen name='Search' component={SearchScreen} />
-					<Stack.Screen name='Profile' component={ProfileScreen} />
-				</>
+				<Stack.Screen name='Home' component={TabNavigator} />
 			) : (
 				<Stack.Screen name='Login' component={LoginScreen} />
 			)}
