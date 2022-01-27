@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+	ActivityIndicator,
 	Button,
 	FlatList,
 	SafeAreaView,
@@ -12,7 +13,6 @@ import { useNavigation } from '@react-navigation/core';
 import { X_MESSARI_API_KEY } from '@env';
 import Listcard from '../components/Listcard';
 import useAuth from '../hooks/useAuth';
-import * as data from '../static/data/db.json';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 
@@ -48,7 +48,6 @@ const Search = ({ data }) => {
 };
 
 export default function StockScreen() {
-	const currencies = data.currencies;
 	const { logout } = useAuth();
 	const [cryptoData, setCrytpoData] = useState({ data: [] });
 	const a = 10;
@@ -59,7 +58,6 @@ export default function StockScreen() {
 			{
 				method: 'GET',
 				headers: { 'x-messari-api-key': X_MESSARI_API_KEY },
-				// headers: { "x-messari-api-key": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9" }
 			}
 		)
 			.then((response) => response.json())
@@ -71,33 +69,48 @@ export default function StockScreen() {
 	return (
 		<SafeAreaView style={styles.screen}>
 			<Header />
-			<Search data={cryptoData.data} />
-			<FlatList
-				data={cryptoData.data}
-				keyExtractor={(item) => item.id}
-				renderItem={({ item }) => (
-					<Listcard
-						title={item.symbol}
-						subTitle={item.name}
-						image={`https://messari.io/asset-images/${item.id}/128.png`}
-						onPress={() => console.log(item)}
-						price={
-							item.metrics.market_data.price_usd < 1.01
-								? Math.round(
-										item.metrics.market_data.price_usd *
-											1000000
-								  ) / 1000000
-								: Math.round(
-										item.metrics.market_data.price_usd * 100
-								  ) / 100
-						}
-						changeRate={Math.round(
-								item.metrics.market_data.percent_change_usd_last_24_hours * 100
-							) / 100
-						}
+			{console.log(!cryptoData.data.length)}
+			{!cryptoData.data.length ? (
+				<ActivityIndicator
+					size={'large'}
+					color={'#0000ff'}
+					style={{ flex: 1 }}
+				/>
+			) : (
+				<>
+					<Search data={cryptoData.data} />
+					<FlatList
+						data={cryptoData.data}
+						keyExtractor={(item) => item.id}
+						renderItem={({ item }) => (
+							<Listcard
+								title={item.symbol}
+								subTitle={item.name}
+								image={`https://messari.io/asset-images/${item.id}/128.png`}
+								onPress={() => console.log(item)}
+								price={
+									item.metrics.market_data.price_usd < 1.01
+										? Math.round(
+												item.metrics.market_data
+													.price_usd * 1000000
+										  ) / 1000000
+										: Math.round(
+												item.metrics.market_data
+													.price_usd * 100
+										  ) / 100
+								}
+								changeRate={
+									Math.round(
+										item.metrics.market_data
+											.percent_change_usd_last_24_hours *
+											100
+									) / 100
+								}
+							/>
+						)}
 					/>
-				)}
-			/>
+				</>
+			)}
 			<View>
 				<Button title='Logout' onPress={logout} color={'#0a2351'} />
 			</View>

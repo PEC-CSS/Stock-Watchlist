@@ -10,15 +10,24 @@ import {
 
 // definition of the Item, which will be rendered in the FlatList
 const Item = ({ item }) => {
-	const { name, symbol, image, price, changeRate } = item;
-
 	return (
 		<View style={styles.item}>
-			<Text style={styles.title}>{name}</Text>
-			<Text style={styles.details}>{symbol}</Text>
-			<Text style={styles.details}>{image}</Text>
-			<Text style={styles.details}>{price}</Text>
-			<Text style={styles.details}>{changeRate}</Text>
+			<Text style={styles.title}>{item.name}</Text>
+			<Text style={styles.details}>{item.symbol}</Text>
+			<Text style={styles.details}>{item.id}</Text>
+			<Text style={styles.details}>
+				{item.metrics.market_data.price_usd < 1.01
+					? Math.round(item.metrics.market_data.price_usd * 1000000) /
+					  1000000
+					: Math.round(item.metrics.market_data.price_usd * 100) /
+					  100}
+			</Text>
+			<Text style={styles.details}>
+				{Math.round(
+					item.metrics.market_data.percent_change_usd_last_24_hours *
+						100
+				) / 100}
+			</Text>
 		</View>
 	);
 };

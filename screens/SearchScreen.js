@@ -9,27 +9,11 @@ import Constants from 'expo-constants';
 // import HeaderLogin from '../components/header/headerLoginPage';
 import SearchBar from '../components/search';
 import List from '../components/search/suggestion';
-import * as localdata from '../static/data/db.json';
 
 const SearchScreen = (props) => {
-    const currencies = localdata.currencies;
-    // console.log(currencies);
 	const data = props.route.params.data;
 	const [searchPhrase, setSearchPhrase] = useState('');
-	const [clicked, setClicked] = useState( props.route.params.clicked | false);
-	const [fakeData, setFakeData] = useState();
-
-	// get data from the fake api endpoint
-	useEffect(() => {
-		const getData = async () => {
-            const url = 'https://my-json-server.typicode.com/kevintomas1995/logRocket_searchBar/languages';
-			const apiResponse = await fetch(url);
-			const data = await apiResponse.json();
-            // console.log(data);
-			setFakeData(data);
-		};
-		getData();
-	}, []);
+	const [clicked, setClicked] = useState(props.route.params.clicked | false);
 
 	return (
 		<SafeAreaView style={styles.root}>
@@ -41,14 +25,16 @@ const SearchScreen = (props) => {
 				clicked={clicked}
 				setClicked={setClicked}
 			/>
-			{/* {!fakeData ? ( */}
 			{!data ? (
-				<ActivityIndicator size='large' />
+				<ActivityIndicator
+					size='large'
+					color={'#0000ff'}
+					style={{ flex: 1 }}
+				/>
 			) : (
 				<List
 					searchPhrase={searchPhrase}
 					data={data}
-					// data={fakeData}
 					setClicked={setClicked}
 				/>
 			)}
