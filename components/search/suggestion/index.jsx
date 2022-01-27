@@ -16,8 +16,8 @@ const Item = ({ item }) => {
 		<View style={styles.item}>
 			<Text style={styles.title}>{name}</Text>
 			<Text style={styles.details}>{symbol}</Text>
-			<Text style={styles.details}>{image}</Text>
-			<Text style={styles.details}>{price}</Text>
+			{/* <Text style={styles.details}>{image}</Text> */}
+			<Text style={styles.details}>$ {price}</Text>
 			<Text style={styles.details}>{changeRate}</Text>
 		</View>
 	);
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
 		margin: 30,
 		borderBottomWidth: 2,
 		borderBottomColor: 'lightgrey',
+		
 	},
 	title: {
 		fontSize: 20,
