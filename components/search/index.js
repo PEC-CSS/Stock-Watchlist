@@ -5,14 +5,23 @@ import {
 	StyleSheet,
 	TextInput,
 	View,
+	SafeAreaView,
 } from 'react-native';
 import { Feather, Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import Header from '../header/headerLoginPage';
+import Constants from 'expo-constants';
 
 const SearchBar = (props) => {
     const navigation = useNavigation();
 
     return (
+		<SafeAreaView style={
+			!props.clicked
+						? styles.screen__unclicked
+						: styles.screen__clicked
+		}>
+			<Header />
 		<View style={styles.container}>
 			<View
 				style={
@@ -52,7 +61,7 @@ const SearchBar = (props) => {
 				)}
 			</View>
 			{/* cancel button, depending on whether the search bar is clicked or not */}
-			{props.clicked && (
+			{/* {props.clicked && (
 				<View>
 					<Button
 						title='Cancel'
@@ -63,14 +72,21 @@ const SearchBar = (props) => {
 						}}
 					></Button>
 				</View>
-			)}
+			)} */}
 		</View>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
+	screen__unclicked: {
+		
+	},
+	screen__clicked: {
+		marginTop: Constants.statusBarHeight,
+		paddingTop: 20,
+	},
 	container: {
-		margin: 15,
 		justifyContent: 'flex-start',
 		alignItems: 'center',
 		flexDirection: 'row',
@@ -79,7 +95,7 @@ const styles = StyleSheet.create({
 	searchBar__unclicked: {
 		padding: 10,
 		flexDirection: 'row',
-		width: '95%',
+		width: '100%',
 		backgroundColor: '#d9dbda',
 		borderRadius: 15,
 		alignItems: 'center',
@@ -87,7 +103,7 @@ const styles = StyleSheet.create({
 	searchBar__clicked: {
 		padding: 10,
 		flexDirection: 'row',
-		width: '80%',
+		width: '100%',
 		backgroundColor: '#d9dbda',
 		borderRadius: 15,
 		alignItems: 'center',
