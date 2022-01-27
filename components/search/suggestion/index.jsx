@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
 		margin: 30,
 		borderBottomWidth: 2,
 		borderBottomColor: 'lightgrey',
+		
 	},
 	title: {
 		fontSize: 20,
