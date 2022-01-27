@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import LoginScreen from '../screens/LoginScreen';
 import SearchScreen from '../screens/SearchScreen';
 import StockScreen from '../screens/StockScreen';
-import ProfileScreen from '../screens/ProileScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 

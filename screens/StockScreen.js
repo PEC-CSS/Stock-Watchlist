@@ -40,7 +40,7 @@ export default function StockScreen() {
 	return (
 		<SafeAreaView style={styles.screen}>
 			<Header />
-			{/* {console.log(!cryptoData.data.length)} */}
+			{console.log(!cryptoData.data.length)}
 			{!cryptoData.data.length ? (
 				<ActivityIndicator
 					size={'large'}
@@ -80,9 +80,9 @@ export default function StockScreen() {
 							/>
 						)}
 					/>
-					<Navbar />
 				</>
 			)}
+			<Navbar data={cryptoData.data} />
 		</SafeAreaView>
 	);
 }
