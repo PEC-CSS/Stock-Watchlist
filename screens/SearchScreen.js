@@ -1,34 +1,34 @@
+import { X_MESSARI_API_KEY } from '@env';
 import React, { useState, useEffect } from 'react';
 import {
 	ActivityIndicator,
 	SafeAreaView,
 	StyleSheet,
-	Text,
 } from 'react-native';
 import Constants from 'expo-constants';
 // import HeaderLogin from '../components/header/headerLoginPage';
 import SearchBar from '../components/search';
 import List from '../components/search/suggestion';
-import * as localdata from '../static/data/db.json';
 
 const SearchScreen = (props) => {
-    const currencies = localdata.currencies;
-    // console.log(currencies);
 	const [searchPhrase, setSearchPhrase] = useState('');
-	const [clicked, setClicked] = useState( props.route.params.clicked | false);
-	const [fakeData, setFakeData] = useState();
+	const [clicked, setClicked] = useState(props.route.params.clicked | false);
+	const [cryptoData, setCrytpoData] = useState({ data: [] });
+	const a = 10;
 
-	// get data from the fake api endpoint
 	useEffect(() => {
-		const getData = async () => {
-            const url = 'https://my-json-server.typicode.com/kevintomas1995/logRocket_searchBar/languages';
-			const apiResponse = await fetch(url);
-			const data = await apiResponse.json();
-            // console.log(data);
-			setFakeData(data);
-		};
-		getData();
-	}, []);
+		fetch(
+			'https://data.messari.io/api/v2/assets?fields=id,symbol,name,metrics/market_data',
+			{
+				method: 'GET',
+				headers: { 'x-messari-api-key': X_MESSARI_API_KEY },
+			}
+		)
+			.then((response) => response.json())
+			.then((jsonResponse) => setCrytpoData(jsonResponse))
+			.catch((error) => console.log(error))
+			.finally(() => console.log(cryptoData));
+	}, [a]);
 
 	return (
 		<SafeAreaView style={styles.root}>
@@ -39,14 +39,16 @@ const SearchScreen = (props) => {
 				clicked={clicked}
 				setClicked={setClicked}
 			/>
-			{/* {!fakeData ? ( */}
-			{!currencies ? (
-				<ActivityIndicator size='large' />
+			{!cryptoData.data.length ? (
+				<ActivityIndicator
+					size='large'
+					color={'#0000ff'}
+					style={{ flex: 1 }}
+				/>
 			) : (
 				<List
 					searchPhrase={searchPhrase}
-					data={currencies}
-					// data={fakeData}
+					data={cryptoData.data}
 					setClicked={setClicked}
 				/>
 			)}
