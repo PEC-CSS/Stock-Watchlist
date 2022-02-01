@@ -17,19 +17,21 @@ import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { AntDesign } from '@expo/vector-icons';
 
+
+
 const LoginScreen = () => {
-	const { signInWithGoogle, loading } = useAuth();
+	const { signInWithGoogle, loading } = useAuth()	
 
 	let [fontsLoaded, error] = useFonts({
 		Overpass: require('../assets/fonts/Overpass-ExtraBold.ttf'),
 		'Overpass-light': require('../assets/fonts/Overpass-Light.ttf'),
-	});
-
+	});	
+	
 	if (!fontsLoaded) {
 		return <AppLoading />;
 	}
-
-	return (
+			
+		return (
 		<SafeAreaView style={s1.screen}>
 			<Header />
 			<ScrollView>
@@ -49,7 +51,7 @@ const LoginScreen = () => {
 						onPress={signInWithGoogle}
 					/>
 				</View>
-				<View style={s1.footer}>
+				{/* <View style={s1.footer}>
 					<Text style={s1.footerText}>
 						This is an open source project made by student branch of
 						ACM-CSS of Punjab Engineering College.
@@ -88,18 +90,18 @@ const LoginScreen = () => {
 							/>
 						</View>
 					</TouchableOpacity>
-				</View>
+				</View> */}
 			</ScrollView>
 		</SafeAreaView>
 	);
 };
 
+
 const s1 = StyleSheet.create({
 	screen: {
 		flex: 1,
-		marginTop: Constants.statusBarHeight,
-		marginTop: 5,
-		backgroundColor: '#F0F8FF',
+		marginTop: 0,
+		backgroundColor: '#f0f8ff',
 	},
 	imageContainer: {
 		width: '95%',
@@ -119,7 +121,7 @@ const s1 = StyleSheet.create({
 		fontFamily: 'Overpass',
 		fontSize: 48,
 		marginTop: 25,
-		lineHeight: 60,
+		lineHeight: 55,
 	},
 	logButton: {
 		alignItems: 'center',
@@ -129,11 +131,11 @@ const s1 = StyleSheet.create({
 		fontWeight: 'bold',
 		margin: 20,
 	},
-	footer: {
-		backgroundColor: '#0a2351',
-		height: 200,
-		marginTop: 30,
-	},
+	// footer: {
+	// 	backgroundColor: '#0a2351',
+	// 	height: 200,
+	// 	marginTop: 30,
+	// },
 	footerText: {
 		color: 'white',
 		fontFamily: 'Overpass-light',

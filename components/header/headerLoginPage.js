@@ -28,7 +28,7 @@ export default function HeaderLogin() {
 const styles = StyleSheet.create({
 	header: {
 		height: 50,
-		backgroundColor: '#002D62',
+		backgroundColor: '#11468f',
 		paddingTop: 5,
 	},
 	headerContent: {

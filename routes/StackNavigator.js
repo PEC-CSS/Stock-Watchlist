@@ -3,6 +3,7 @@ import React from 'react';
 import useAuth from '../hooks/useAuth';
 import LoginScreen from '../screens/LoginScreen';
 import TabNavigator from './TabNavigator';
+import IntroScreen from '../screens/Intro';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,10 +16,12 @@ const StackNavigator = () => {
 				headerShown: false,
 			}}
 		>
+			{/* <Stack.Screen name='Intro' component={IntroScreen} /> */}
 			{user ? (
 				<Stack.Screen name='Home' component={TabNavigator} />
 			) : (
-				<Stack.Screen name='Login' component={LoginScreen} />
+				// <Stack.Screen name='Login' component={LoginScreen} 
+				<Stack.Screen name='Intro' component={IntroScreen} />
 			)}
 		</Stack.Navigator>
 	);

@@ -1,44 +1,66 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 import SearchScreen from '../screens/SearchScreen';
 import StockScreen from '../screens/StockScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import AboutScreen from '../screens/AboutScreen';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator()
 
 const TabNavigator = () => {
-	return (
+	return(
 		<Tab.Navigator
-			screenOptions={({ route }) => ({
-				headerShown: false,
-				tabBarIcon: ({ focused, color, size }) => {
-					let iconName;
-
-					if (route.name === 'Stocks') {
-						iconName = 'rupee';
-					} else if (route.name === 'Search') {
-						iconName = 'search';
-					} else if (route.name === 'Profile') {
-						iconName = 'home';
-					}
-
-					return (
-						<FontAwesome name={iconName} size={20} color={color} />
-					);
-				},
-				tabBarStyle: { backgroundColor: '#002D62' },
-			})}
+			shifting = {true}
+			initialRouteName = "Stocks"
+			activeColor = 'white'
+			labelStyle = {{fontSize : 15}}
+			style = {{backgroundColor: '#0f004c'}}
+			barStyle ={{ backgroundColor: '#11468f' }}
 		>
-			<Tab.Screen name='Stocks' component={StockScreen} />
-			<Tab.Screen
-				name='Search'
+			<Tab.Screen 
+				name='Stocks' 
+				component={StockScreen} 
+				options={{
+					tabBarLabel: 'Stocks',
+					tabBarIcon: ({ color }) => (
+						<FontAwesome name="dollar" color={color} size={26} />
+					),
+				}}
+			/>
+			<Tab.Screen	
+				name='Search'	
 				component={SearchScreen}
 				initialParams={{ clicked: true }}
-			/>
-			<Tab.Screen name='Profile' component={ProfileScreen} />
+				options={{
+					tabBarLabel: 'Search',
+					tabBarIcon: ({ color }) => (
+						<FontAwesome name="search" color={color} size={23} />
+					),
+				}}
+				/>
+			<Tab.Screen 
+				name='AboutUs' 
+				component={AboutScreen}
+				options={{
+					tabBarLabel: 'About Us',
+					tabBarIcon: ({ color }) => (
+						<FontAwesome name="group" color={color} size={22} />
+					),
+				}}
+				/>
+			<Tab.Screen 
+				name='Profile' 
+				component={ProfileScreen}
+				options={{
+					tabBarLabel: 'Profile',
+					tabBarIcon: ({ color }) => (
+						<FontAwesome name="home" color={color} size={26} />
+					),
+				}}
+				/>
 		</Tab.Navigator>
 	);
-};
+}
 
 export default TabNavigator;
