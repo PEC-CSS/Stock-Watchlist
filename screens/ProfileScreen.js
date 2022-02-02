@@ -8,10 +8,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 import UserComponent from '../components/profile';
 
-export default function StockScreen(props) {
+export default function ProfileScreen() {
 	const navigation = useNavigation();
-	const { logout } = useAuth();
-	const user = props.route.params.user;
+	const { user, logout } = useAuth();
 
 	return (
 		<SafeAreaView style={styles.screen}>

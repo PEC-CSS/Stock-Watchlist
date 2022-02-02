@@ -1,15 +1,15 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import SearchScreen from '../screens/SearchScreen';
 import StockScreen from '../screens/StockScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import AboutScreen from '../screens/AboutScreen';
+import WatchListScreen from '../screens/WatchListScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const TabNavigator = (props) => {
-	const user = props.route.params.user;
+const TabNavigator = () => {
 	return (
 		<Tab.Navigator
 			shifting={true}
@@ -26,6 +26,16 @@ const TabNavigator = (props) => {
 					tabBarLabel: 'Stocks',
 					tabBarIcon: ({ color }) => (
 						<FontAwesome name='dollar' color={color} size={26} />
+					),
+				}}
+			/>
+			<Tab.Screen
+				name='Watchlist'
+				component={WatchListScreen}
+				options={{
+					tabBarLabel: 'Watchlist',
+					tabBarIcon: ({ color }) => (
+						<Ionicons name='bookmarks' color={color} size={26} />
 					),
 				}}
 			/>
@@ -59,7 +69,6 @@ const TabNavigator = (props) => {
 						<FontAwesome name='home' color={color} size={26} />
 					),
 				}}
-				initialParams={{ user: user }}
 			/>
 		</Tab.Navigator>
 	);
