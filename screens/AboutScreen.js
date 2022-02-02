@@ -1,11 +1,12 @@
 import React from 'react';
-import { View,
-	Text, 
-	SafeAreaView, 
-	StyleSheet, 
+import {
+	View,
+	Text,
+	SafeAreaView,
+	StyleSheet,
 	TouchableOpacity,
-	ScrollView, 
-	Linking 
+	ScrollView,
+	Linking,
 } from 'react-native';
 import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
@@ -15,7 +16,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 export default function AboutScreen() {
 	let [fontsLoaded, error] = useFonts({
-		'Ubuntu': require('../assets/fonts/Ubuntu-Medium.ttf'),
+		Ubuntu: require('../assets/fonts/Ubuntu-Medium.ttf'),
 	});
 
 	if (!fontsLoaded) {
@@ -27,26 +28,27 @@ export default function AboutScreen() {
 			<Header />
 			<ScrollView>
 				<View style={styles.header}>
-					<Text style={{ fontSize: 16, fontWeight: 'bold'}}>Punjab Engineering College's</Text>
-					<Text style={styles.headerTitle}>
-						ACM - CSS 
+					<Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+						Punjab Engineering College's
 					</Text>
+					<Text style={styles.headerTitle}>ACM - CSS</Text>
 					<Text style={styles.headerText}>
-						"We are of ACM-CSS PEC, the Computer Science Society of PEC . Here we do everthing related to the world of coding ranging from Web Development to Open Source Contribution"
+						"We are of ACM-CSS PEC, the Computer Science Society of
+						PEC . Here we do everthing related to the world of
+						coding ranging from Web Development to Open Source
+						Contribution"
 					</Text>
 				</View>
 				<View style={styles.body}>
-					<Text style={styles.bodyTitle}>
-						STOCK WATCHLIST
-					</Text>
-					<Text style={styles.bodyText} >
-						What is Stock Watchlist about ? {'\n'} An open source project developed by ACM-CSS, where you can keep an eye on how the market changes day-to-day.
+					<Text style={styles.bodyTitle}>STOCK WATCHLIST</Text>
+					<Text style={styles.bodyText}>
+						What is Stock Watchlist about ? {'\n'} An open source
+						project developed by ACM-CSS, where you can keep an eye
+						on how the market changes day-to-day.
 					</Text>
 				</View>
-				<View style={styles.contactUs} >
-					<Text style={styles.contactTitle}>
-						CONTACT US
-					</Text>
+				<View style={styles.contactUs}>
+					<Text style={styles.contactTitle}>CONTACT US</Text>
 					<TouchableOpacity>
 						<View style={styles.iconContainer}>
 							<View style={styles.icons}>
@@ -179,7 +181,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	icons:{
+	icons: {
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between',
@@ -201,5 +203,5 @@ const styles = StyleSheet.create({
 	footerText: {
 		fontSize: 22,
 		marginBottom: 20,
-	}
+	},
 });

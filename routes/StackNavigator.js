@@ -10,6 +10,16 @@ const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
 	const { user } = useAuth();
 
+	const formatUserData = (user) => {
+		const data = user.providerData[0];
+		return {
+			name: data.displayName,
+			email: data.email,
+			image: data.photoURL,
+			phone: data.phoneNumber,
+		};
+	};
+
 	return (
 		<Stack.Navigator
 			screenOptions={{
@@ -18,9 +28,13 @@ const StackNavigator = () => {
 		>
 			{/* <Stack.Screen name='Intro' component={IntroScreen} /> */}
 			{user ? (
-				<Stack.Screen name='Home' component={TabNavigator} />
+				<Stack.Screen
+					name='Home'
+					component={TabNavigator}
+					initialParams={{ user: formatUserData(user) }}
+				/>
 			) : (
-				// <Stack.Screen name='Login' component={LoginScreen} 
+				// <Stack.Screen name='Login' component={LoginScreen}
 				<Stack.Screen name='Intro' component={IntroScreen} />
 			)}
 		</Stack.Navigator>
