@@ -55,11 +55,11 @@ export default function StockScreen() {
 										? Math.round(
 												item.metrics.market_data
 													.price_usd * 1000000
-										  ) / 1000000
+										) / 1000000
 										: Math.round(
 												item.metrics.market_data
 													.price_usd * 100
-										  ) / 100
+										) / 100
 								}
 								changeRate={
 									Math.round(
@@ -81,26 +81,5 @@ const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
 		paddingTop: Constants.statusBarHeight,
-		backgroundColor: '#F0F8FF',
-	},
-	container: {
-		margin: 15,
-		justifyContent: 'flex-start',
-		alignItems: 'center',
-		flexDirection: 'row',
-		width: '90%',
-	},
-	searchBar__unclicked: {
-		padding: 10,
-		flexDirection: 'row',
-		width: '95%',
-		backgroundColor: '#d9dbda',
-		borderRadius: 15,
-		alignItems: 'center',
-	},
-	input: {
-		fontSize: 20,
-		marginLeft: 10,
-		width: '90%',
 	},
 });

@@ -11,37 +11,38 @@ import {
 import useAuth from '../hooks/useAuth';
 import FlatButton from '../shared/button';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { AntDesign } from '@expo/vector-icons';
 
+
+
 const LoginScreen = () => {
-	const { signInWithGoogle, loading } = useAuth();
+	const { signInWithGoogle, loading } = useAuth()	
 
 	let [fontsLoaded, error] = useFonts({
 		Overpass: require('../assets/fonts/Overpass-ExtraBold.ttf'),
 		'Overpass-light': require('../assets/fonts/Overpass-Light.ttf'),
-	});
-
+	});	
+	
 	if (!fontsLoaded) {
 		return <AppLoading />;
 	}
-
-	return (
-		<SafeAreaView style={s1.screen}>
+			
+		return (
+		<SafeAreaView style={styles.screen}>
 			<Header />
 			<ScrollView>
-				<Text style={s1.slogan}>CHECK BEFORE YOU INVEST</Text>
-				<View style={s1.imageContainer}>
+				<Text style={styles.slogan}>CHECK BEFORE YOU INVEST</Text>
+				<View style={styles.imageContainer}>
 					<Image
-						style={s1.image}
+						style={styles.image}
 						source={require('../assets/stock.png')}
 					/>
 				</View>
-				<View style={s1.logButton}>
-					<Text style={s1.logButtonText}>
+				<View style={styles.logButton}>
+					<Text style={styles.logButtonText}>
 						{loading ? 'Loading . . . ' : 'Login to the app'}
 					</Text>
 					<FlatButton
@@ -49,13 +50,13 @@ const LoginScreen = () => {
 						onPress={signInWithGoogle}
 					/>
 				</View>
-				<View style={s1.footer}>
-					<Text style={s1.footerText}>
+				<View style={styles.footer}>
+					<Text style={styles.footerText}>
 						This is an open source project made by student branch of
 						ACM-CSS of Punjab Engineering College.
 					</Text>
 					<TouchableOpacity>
-						<View style={s1.icons}>
+						<View style={styles.icons}>
 							<AntDesign
 								name='linkedin-square'
 								size={24}
@@ -94,12 +95,12 @@ const LoginScreen = () => {
 	);
 };
 
-const s1 = StyleSheet.create({
+
+const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
-		marginTop: Constants.statusBarHeight,
-		marginTop: 5,
-		backgroundColor: '#F0F8FF',
+		marginTop: 0,
+		backgroundColor: '#f0f8ff',
 	},
 	imageContainer: {
 		width: '95%',
@@ -119,7 +120,7 @@ const s1 = StyleSheet.create({
 		fontFamily: 'Overpass',
 		fontSize: 48,
 		marginTop: 25,
-		lineHeight: 60,
+		lineHeight: 55,
 	},
 	logButton: {
 		alignItems: 'center',

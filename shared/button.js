@@ -20,7 +20,7 @@ export default function FlatButton({ text, onPress }) {
 
 const styles = StyleSheet.create({
 	button: {
-		backgroundColor: '#0a2351',
+		backgroundColor: '#002D62',
 		borderRadius: 10,
 		flexDirection: 'row',
 		alignItems: 'center',

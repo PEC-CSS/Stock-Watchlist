@@ -4,9 +4,10 @@ import {
 	ActivityIndicator,
 	SafeAreaView,
 	StyleSheet,
+	View
 } from 'react-native';
 import Constants from 'expo-constants';
-// import HeaderLogin from '../components/header/headerLoginPage';
+import Header from '../components/header/headerLoginPage';
 import SearchBar from '../components/search';
 import List from '../components/search/suggestion';
 
@@ -32,26 +33,28 @@ const SearchScreen = (props) => {
 
 	return (
 		<SafeAreaView style={styles.root}>
-			{/* <HeaderLogin /> */}
-			<SearchBar
-				searchPhrase={searchPhrase}
-				setSearchPhrase={setSearchPhrase}
-				clicked={clicked}
-				setClicked={setClicked}
-			/>
-			{!cryptoData.data.length ? (
-				<ActivityIndicator
-					size='large'
-					color={'#0000ff'}
-					style={{ flex: 1 }}
-				/>
-			) : (
-				<List
+			<Header />
+			<View style={styles.searchBox}>
+				<SearchBar
 					searchPhrase={searchPhrase}
-					data={cryptoData.data}
+					setSearchPhrase={setSearchPhrase}
+					clicked={clicked}
 					setClicked={setClicked}
 				/>
-			)}
+				{!cryptoData.data.length ? (
+					<ActivityIndicator
+						size='large'
+						color={'#0000ff'}
+						style={{ flex: 1 }}
+					/>
+				) : (
+					<List
+						searchPhrase={searchPhrase}
+						data={cryptoData.data}
+						setClicked={setClicked}
+					/>
+				)}
+			</View>
 		</SafeAreaView>
 	);
 };
@@ -59,17 +62,12 @@ const SearchScreen = (props) => {
 const styles = StyleSheet.create({
 	root: {
 		marginTop: Constants.statusBarHeight,
-		backgroundColor: '#F0F8FF',
+		backgroundColor: '#f0f8ff',
+	}, 
+	searchBox: {
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	title: {
-		width: '100%',
-		marginTop: 20,
-		fontSize: 25,
-		fontWeight: 'bold',
-		marginLeft: '10%',
-	},
+	}
 });
 
 export default SearchScreen;

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
 		paddingTop: Constants.statusBarHeight,
-		backgroundColor: '#F0F8FF',
+		backgroundColor: '#f0f8ff',
 	},
 	logOut: {
 		position: 'relative',

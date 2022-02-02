@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		flexDirection: 'row',
 		padding: 15,
-		backgroundColor: '#F0F8FF',
-		borderBottomWidth: 3,
+		backgroundColor: '#f0f8ff',
+		borderBottomWidth: 1,
 		borderBottomColor: 'white',
 	},
 	detailsContainer: {
