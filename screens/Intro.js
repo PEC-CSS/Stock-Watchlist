@@ -15,14 +15,6 @@ const IntroScreen = () => {
     const [showRealApp, setshowRealApp] = useState(false)
     const { signInWithGoogle, loading } = useAuth()	
 
-    const onDone = () => {
-        setshowRealApp(true)
-    }
-
-    const onSkip = () => {
-        setshowRealApp(true)
-    }
-
     const RenderItem = ({ item }) => {
         return (
 			<View 
@@ -68,11 +60,8 @@ const IntroScreen = () => {
                         dotStyle={{ backgroundColor: '#eeeeee' , width: '2%' , height: 5, }}
                         data={slides}
                         renderItem={RenderItem}
-                        // onDone={signInWithGoogle}
-                        onSkip={signInWithGoogle}
                         showSkipButton={true}
                         showDoneButton={false}
-                        // bottomButton
                     />
                 )
             }

@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ScrollView, Linking } from 'react-native';
+import { View,
+	Text, 
+	SafeAreaView, 
+	StyleSheet, 
+	TouchableOpacity,
+	ScrollView, 
+	Linking 
+} from 'react-native';
 import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';

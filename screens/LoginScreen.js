@@ -11,7 +11,6 @@ import {
 import useAuth from '../hooks/useAuth';
 import FlatButton from '../shared/button';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -32,18 +31,18 @@ const LoginScreen = () => {
 	}
 			
 		return (
-		<SafeAreaView style={s1.screen}>
+		<SafeAreaView style={styles.screen}>
 			<Header />
 			<ScrollView>
-				<Text style={s1.slogan}>CHECK BEFORE YOU INVEST</Text>
-				<View style={s1.imageContainer}>
+				<Text style={styles.slogan}>CHECK BEFORE YOU INVEST</Text>
+				<View style={styles.imageContainer}>
 					<Image
-						style={s1.image}
+						style={styles.image}
 						source={require('../assets/stock.png')}
 					/>
 				</View>
-				<View style={s1.logButton}>
-					<Text style={s1.logButtonText}>
+				<View style={styles.logButton}>
+					<Text style={styles.logButtonText}>
 						{loading ? 'Loading . . . ' : 'Login to the app'}
 					</Text>
 					<FlatButton
@@ -51,13 +50,13 @@ const LoginScreen = () => {
 						onPress={signInWithGoogle}
 					/>
 				</View>
-				{/* <View style={s1.footer}>
-					<Text style={s1.footerText}>
+				<View style={styles.footer}>
+					<Text style={styles.footerText}>
 						This is an open source project made by student branch of
 						ACM-CSS of Punjab Engineering College.
 					</Text>
 					<TouchableOpacity>
-						<View style={s1.icons}>
+						<View style={styles.icons}>
 							<AntDesign
 								name='linkedin-square'
 								size={24}
@@ -90,14 +89,14 @@ const LoginScreen = () => {
 							/>
 						</View>
 					</TouchableOpacity>
-				</View> */}
+				</View>
 			</ScrollView>
 		</SafeAreaView>
 	);
 };
 
 
-const s1 = StyleSheet.create({
+const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
 		marginTop: 0,
@@ -131,11 +130,11 @@ const s1 = StyleSheet.create({
 		fontWeight: 'bold',
 		margin: 20,
 	},
-	// footer: {
-	// 	backgroundColor: '#0a2351',
-	// 	height: 200,
-	// 	marginTop: 30,
-	// },
+	footer: {
+		backgroundColor: '#0a2351',
+		height: 200,
+		marginTop: 30,
+	},
 	footerText: {
 		color: 'white',
 		fontFamily: 'Overpass-light',

@@ -1,16 +1,13 @@
 import React from 'react';
 import {
-	Button,
 	Keyboard,
 	StyleSheet,
 	TextInput,
 	View,
 } from 'react-native';
 import { Feather, Entypo } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/core';
 
 const SearchBar = (props) => {
-	const navigation = useNavigation();
 
 	return (
 		<View style={styles.container}>
