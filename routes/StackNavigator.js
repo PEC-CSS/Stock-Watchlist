@@ -20,7 +20,7 @@ const StackNavigator = () => {
 			{user ? (
 				<Stack.Screen name='Home' component={TabNavigator} />
 			) : (
-				// <Stack.Screen name='Login' component={LoginScreen} 
+				// <Stack.Screen name='Login' component={LoginScreen}
 				<Stack.Screen name='Intro' component={IntroScreen} />
 			)}
 		</Stack.Navigator>

@@ -16,21 +16,19 @@ import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { AntDesign } from '@expo/vector-icons';
 
-
-
 const LoginScreen = () => {
-	const { signInWithGoogle, loading } = useAuth()	
+	const { signInWithGoogle, loading } = useAuth();
 
 	let [fontsLoaded, error] = useFonts({
 		Overpass: require('../assets/fonts/Overpass-ExtraBold.ttf'),
 		'Overpass-light': require('../assets/fonts/Overpass-Light.ttf'),
-	});	
-	
+	});
+
 	if (!fontsLoaded) {
 		return <AppLoading />;
 	}
-			
-		return (
+
+	return (
 		<SafeAreaView style={styles.screen}>
 			<Header />
 			<ScrollView>
@@ -94,7 +92,6 @@ const LoginScreen = () => {
 		</SafeAreaView>
 	);
 };
-
 
 const styles = StyleSheet.create({
 	screen: {

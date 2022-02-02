@@ -4,7 +4,7 @@ import {
 	ActivityIndicator,
 	SafeAreaView,
 	StyleSheet,
-	View
+	View,
 } from 'react-native';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
@@ -63,11 +63,11 @@ const styles = StyleSheet.create({
 	root: {
 		marginTop: Constants.statusBarHeight,
 		backgroundColor: '#f0f8ff',
-	}, 
+	},
 	searchBox: {
 		justifyContent: 'center',
 		alignItems: 'center',
-	}
+	},
 });
 
 export default SearchScreen;

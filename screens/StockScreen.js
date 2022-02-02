@@ -55,11 +55,11 @@ export default function StockScreen() {
 										? Math.round(
 												item.metrics.market_data
 													.price_usd * 1000000
-										) / 1000000
+										  ) / 1000000
 										: Math.round(
 												item.metrics.market_data
 													.price_usd * 100
-										) / 100
+										  ) / 100
 								}
 								changeRate={
 									Math.round(

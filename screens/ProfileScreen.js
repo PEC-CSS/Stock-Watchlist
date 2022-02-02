@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-	View,
-	SafeAreaView,
-	StyleSheet,
-	TouchableOpacity,
-} from 'react-native';
+import { View, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import useAuth, { AuthProvider } from '../hooks/useAuth';
 import Constants from 'expo-constants';
 import Logout from '../shared/buttonLogout';
