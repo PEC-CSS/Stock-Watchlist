@@ -8,7 +8,8 @@ import AboutScreen from '../screens/AboutScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabNavigator = (props) => {
+	const user = props.route.params.user;
 	return (
 		<Tab.Navigator
 			shifting={true}
@@ -58,6 +59,7 @@ const TabNavigator = () => {
 						<FontAwesome name='home' color={color} size={26} />
 					),
 				}}
+				initialParams={{ user: user }}
 			/>
 		</Tab.Navigator>
 	);

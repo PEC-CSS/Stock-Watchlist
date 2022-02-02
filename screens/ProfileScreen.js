@@ -6,10 +6,12 @@ import Logout from '../shared/buttonLogout';
 import Header from '../components/header/headerLoginPage';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
+import UserComponent from '../components/profile';
 
-export default function StockScreen() {
+export default function StockScreen(props) {
 	const navigation = useNavigation();
 	const { logout } = useAuth();
+	const user = props.route.params.user;
 
 	return (
 		<SafeAreaView style={styles.screen}>
@@ -29,6 +31,7 @@ export default function StockScreen() {
 					<Logout text='LogOut' onPress={logout} />
 				</View>
 			</View>
+			<UserComponent user={user} />
 		</SafeAreaView>
 	);
 }
