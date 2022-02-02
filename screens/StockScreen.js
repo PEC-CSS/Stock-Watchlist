@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
 	ActivityIndicator,
 	FlatList,
@@ -11,6 +11,7 @@ import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 
 export default function StockScreen() {
+	const [refreshing, setRefreshing] = useState(false);
 	const [cryptoData, setCrytpoData] = useState({ data: [] });
 	const a = 10;
 
@@ -27,6 +28,22 @@ export default function StockScreen() {
 			.catch((error) => console.log(error))
 			.finally(() => console.log(cryptoData));
 	}, [a]);
+
+	const onRefresh = useCallback(() => {
+		setRefreshing(true);
+		fetch(
+			'https://data.messari.io/api/v2/assets?fields=id,symbol,name,metrics/market_data',
+			{
+				method: 'GET',
+				headers: { 'x-messari-api-key': X_MESSARI_API_KEY },
+			}
+		)
+			.then((response) => response.json())
+			.then((jsonResponse) => setCrytpoData(jsonResponse))
+			.then(() => setRefreshing(false))
+			.catch((error) => console.log(error))
+			.finally(() => console.log(cryptoData));
+	}, []);
 
 	return (
 		<SafeAreaView style={styles.screen}>
@@ -70,6 +87,8 @@ export default function StockScreen() {
 								}
 							/>
 						)}
+						refreshing={refreshing}
+						onRefresh={onRefresh}
 					/>
 				</>
 			)}

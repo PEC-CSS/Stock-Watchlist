@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
+import WatchList from '../components/watchlist';
 
 const NoWatchlistFound = () => {
 	return (
@@ -17,10 +18,17 @@ const NoWatchlistFound = () => {
 };
 
 const WatchListScreen = () => {
+	const data = {
+		symbol: ['BTC', 'ETH', 'SHIB'],
+	};
 	return (
 		<SafeAreaView style={styles.screen}>
 			<Header />
-			<NoWatchlistFound />
+			{!data.symbol.length ? (
+				<NoWatchlistFound />
+			) : (
+				<WatchList data={data} />
+			)}
 		</SafeAreaView>
 	);
 };
