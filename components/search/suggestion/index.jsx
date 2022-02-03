@@ -1,6 +1,7 @@
 import React from 'react';
 import {
 	Image,
+	RefreshControl,
 	SafeAreaView,
 	ScrollView,
 	StyleSheet,
@@ -99,7 +100,14 @@ const List = (props) => {
 
 	return (
 		<SafeAreaView style={styles.list__container}>
-			<ScrollView>
+			<ScrollView
+				refreshControl={
+					<RefreshControl
+						refreshing={props.refreshing}
+						onRefresh={props.onRefresh}
+					/>
+				}
+			>
 				<View
 					onStartShouldSetResponder={() => {
 						props.setClicked(false);

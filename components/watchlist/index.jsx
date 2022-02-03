@@ -1,20 +1,16 @@
-import { X_MESSARI_API_KEY } from '@env';
 import React, { useState, useEffect, useCallback } from 'react';
 import {
 	ActivityIndicator,
-	SafeAreaView,
-	StyleSheet,
+	RefreshControl,
+	ScrollView,
 	View,
 } from 'react-native';
-import Constants from 'expo-constants';
-import Header from '../components/header/headerLoginPage';
-import SearchBar from '../components/search';
-import List from '../components/search/suggestion';
+import { X_MESSARI_API_KEY } from '@env';
+import WatchListItem from './item';
 
-const SearchScreen = (props) => {
+const WatchList = (props) => {
 	const [refreshing, setRefreshing] = useState(false);
-	const [searchPhrase, setSearchPhrase] = useState('');
-	const [clicked, setClicked] = useState(props.route.params.clicked | false);
+	const data = props.data;
 	const [cryptoData, setCrytpoData] = useState({ data: [] });
 	const a = 10;
 
@@ -28,8 +24,8 @@ const SearchScreen = (props) => {
 		)
 			.then((response) => response.json())
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
-			.catch((error) => console.log(error))
-			.finally(() => console.log(cryptoData));
+			.catch((error) => console.log(error));
+		// .finally(() => console.log(cryptoData));
 	}, [a]);
 
 	const onRefresh = useCallback(() => {
@@ -48,45 +44,37 @@ const SearchScreen = (props) => {
 			.finally(() => console.log(cryptoData));
 	}, []);
 
+	const filterData = (data, cryptoData) => {
+		return cryptoData.filter((item) =>
+			data.find((symbol) => symbol === item.symbol)
+		);
+	};
+	// console.log(filterData(data.symbol, cryptoData.data));
+
 	return (
-		<SafeAreaView style={styles.root}>
-			<Header />
-			<View style={styles.searchBox}>
-				<SearchBar
-					searchPhrase={searchPhrase}
-					setSearchPhrase={setSearchPhrase}
-					clicked={clicked}
-					setClicked={setClicked}
-				/>
+		<View style={{ flex: 1 }}>
+			<ScrollView
+				refreshControl={
+					<RefreshControl
+						refreshing={refreshing}
+						onRefresh={onRefresh}
+					/>
+				}
+			>
 				{!cryptoData.data.length ? (
 					<ActivityIndicator
-						size='large'
+						size={'large'}
 						color={'#0000ff'}
 						style={{ flex: 1 }}
 					/>
 				) : (
-					<List
-						searchPhrase={searchPhrase}
-						data={cryptoData.data}
-						setClicked={setClicked}
-						refreshing={refreshing}
-						onRefresh={onRefresh}
-					/>
+					filterData(data.symbol, cryptoData.data).map((item) => (
+						<WatchListItem key={item.id} item={item} />
+					))
 				)}
-			</View>
-		</SafeAreaView>
+			</ScrollView>
+		</View>
 	);
 };
 
-const styles = StyleSheet.create({
-	root: {
-		marginTop: Constants.statusBarHeight,
-		backgroundColor: '#f0f8ff',
-	},
-	searchBox: {
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-});
-
-export default SearchScreen;
+export default WatchList;
