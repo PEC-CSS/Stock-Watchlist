@@ -1,4 +1,5 @@
 import React from 'react';
+import { RootSiblingParent } from 'react-native-root-siblings';
 import { NavigationContainer } from '@react-navigation/native';
 import { LogBox } from 'react-native';
 LogBox.ignoreAllLogs();
@@ -9,7 +10,9 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<AuthProvider>
-				<StackNavigator />
+				<RootSiblingParent>
+					<StackNavigator />
+				</RootSiblingParent>
 			</AuthProvider>
 		</NavigationContainer>
 	);

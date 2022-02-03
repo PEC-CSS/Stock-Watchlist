@@ -1,3 +1,4 @@
+import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 import {
 	Image,
@@ -10,7 +11,7 @@ import {
 } from 'react-native';
 
 // definition of the Item, which will be rendered in the FlatList
-const Item = ({ item }) => {
+const Item = ({ item, match, updateWatchlistData }) => {
 	const image = `https://messari.io/asset-images/${item.id}/128.png`;
 	const price =
 		item.metrics.market_data.price_usd < 1.01
@@ -56,6 +57,12 @@ const Item = ({ item }) => {
 					</Text>
 				</View>
 			</View>
+			<FontAwesome
+				name={match ? 'bookmark' : 'bookmark-o'}
+				size={24}
+				color='black'
+				onPress={() => updateWatchlistData(match, item.symbol)}
+			/>
 		</View>
 	);
 };
@@ -117,7 +124,12 @@ const List = (props) => {
 						<NoItemFound searchPhrase={props.searchPhrase} />
 					) : (
 						filterData(props.data).map((item) => (
-							<Item key={item.id} item={item} />
+							<Item
+								key={item.id}
+								item={item}
+								match={props.watchlistData.includes(item.symbol)}
+								updateWatchlistData={props.updateWatchlistData}
+							/>
 						))
 					)}
 				</View>
@@ -174,6 +186,7 @@ const styles = StyleSheet.create({
 	leftdetailsContainer: {
 		alignSelf: 'flex-start',
 		marginTop: 2,
+		marginRight: 10,
 	},
 	rate: {
 		textAlign: 'center',

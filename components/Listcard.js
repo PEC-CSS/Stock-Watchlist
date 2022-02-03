@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import { FontAwesome } from '@expo/vector-icons';
+import React from 'react';
 import {
 	View,
 	StyleSheet,
@@ -7,7 +8,7 @@ import {
 	TouchableHighlight,
 } from 'react-native';
 
-function Listcard({
+const Listcard = ({
 	title,
 	subTitle,
 	image,
@@ -15,13 +16,16 @@ function Listcard({
 	onPress,
 	price,
 	changeRate,
-}) {
-	function colorfun() {
+	match,
+	updateWatchlistData,
+}) => {
+	const colorfun = () => {
 		if (changeRate > 0) {
 			return '#00E59F';
 		}
 		return '#FC7682';
-	}
+	};
+
 	return (
 		<TouchableHighlight underlayColor='#f8f4f4' onPress={onPress}>
 			<View style={styles.container}>
@@ -62,10 +66,16 @@ function Listcard({
 						</View>
 					)}
 				</View>
+				<FontAwesome
+					name={match ? 'bookmark' : 'bookmark-o'}
+					size={24}
+					color='black'
+					onPress={() => updateWatchlistData(match, title)}
+				/>
 			</View>
 		</TouchableHighlight>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	container: {
@@ -89,6 +99,7 @@ const styles = StyleSheet.create({
 	leftdetailsContainer: {
 		alignSelf: 'flex-start',
 		marginTop: 2,
+		marginRight: 10,
 	},
 	image: {
 		width: 50,
