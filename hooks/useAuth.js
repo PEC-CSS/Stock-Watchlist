@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 				return Promise.reject();
 			})
 			.catch((error) => setError(error))
-			.finally(() => setLoading(true));
+			.finally(() => setLoading(false));
 	};
 
 	const memoedValue = useMemo(

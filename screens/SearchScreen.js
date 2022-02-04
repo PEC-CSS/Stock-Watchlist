@@ -6,17 +6,77 @@ import {
 	StyleSheet,
 	View,
 } from 'react-native';
+import {
+	doc,
+	getDoc,
+	setDoc,
+	updateDoc,
+	arrayUnion,
+	arrayRemove,
+} from 'firebase/firestore';
+import Toast from 'react-native-root-toast';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 import SearchBar from '../components/search';
 import List from '../components/search/suggestion';
+import useAuth from '../hooks/useAuth';
+import { db } from '../firebase';
 
 const SearchScreen = (props) => {
+	const { user } = useAuth();
+	const docRef = doc(db, 'users', user.uid);
 	const [refreshing, setRefreshing] = useState(false);
 	const [searchPhrase, setSearchPhrase] = useState('');
 	const [clicked, setClicked] = useState(props.route.params.clicked | false);
 	const [cryptoData, setCrytpoData] = useState({ data: [] });
+	const [watchlistData, setWatchlistData] = useState([]);
+	getDoc(docRef).then((docSnap) => {
+		if (docSnap.exists()) {
+			console.log('Document data:', docSnap.data());
+			if (!watchlistData) {
+				setWatchlistData(docSnap.data().watchlist);
+			}
+		} else {
+			console.log('No such document!');
+			setDoc(docRef, {
+				name: user.providerData[0].displayName,
+				email: user.providerData[0].email,
+				watchlist: [],
+			});
+		}
+	});
 	const a = 10;
+
+	const updateWatchlistData = (match, symbol) => {
+		console.log(match, symbol);
+		const toastOptions = {};
+		if (match) {
+			// symbol present in watchlist. remove it
+			let toast = Toast.show(
+				`Removing ${symbol} from watchlist...`,
+				toastOptions
+			);
+			updateDoc(docRef, {
+				watchlist: arrayRemove(symbol),
+			});
+			Toast.hide(toast);
+			Toast.show(`Removed ${symbol} from watchlist...`, toastOptions);
+		} else {
+			// symbol not present in watchlist. add it
+			let toast = Toast.show(
+				`Adding ${symbol} to watchlist...`,
+				toastOptions
+			);
+			updateDoc(docRef, {
+				watchlist: arrayUnion(symbol),
+			});
+			Toast.hide(toast);
+			Toast.show(`Added ${symbol} to watchlist...`, toastOptions);
+		}
+		getDoc(docRef).then((docSnap) => {
+			setWatchlistData(docSnap.data().watchlist);
+		});
+	};
 
 	useEffect(() => {
 		fetch(
@@ -28,8 +88,8 @@ const SearchScreen = (props) => {
 		)
 			.then((response) => response.json())
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
-			.catch((error) => console.log(error))
-			.finally(() => console.log(cryptoData));
+			.catch((error) => console.log(error));
+		// .finally(() => console.log(cryptoData));
 	}, [a]);
 
 	const onRefresh = useCallback(() => {
@@ -44,8 +104,11 @@ const SearchScreen = (props) => {
 			.then((response) => response.json())
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
 			.then(() => setRefreshing(false))
-			.catch((error) => console.log(error))
-			.finally(() => console.log(cryptoData));
+			.catch((error) => console.log(error));
+		// .finally(() => console.log(cryptoData));
+		getDoc(docRef).then((docSnap) => {
+			setWatchlistData(docSnap.data().watchlist);
+		});
 	}, []);
 
 	return (
@@ -71,6 +134,8 @@ const SearchScreen = (props) => {
 						setClicked={setClicked}
 						refreshing={refreshing}
 						onRefresh={onRefresh}
+						watchlistData={watchlistData}
+						updateWatchlistData={updateWatchlistData}
 					/>
 				)}
 			</View>

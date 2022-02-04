@@ -1,7 +1,8 @@
+import { FontAwesome } from '@expo/vector-icons';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-const WatchListItem = ({ item }) => {
+const WatchListItem = ({ item, match, updateWatchlistData }) => {
 	const image = `https://messari.io/asset-images/${item.id}/128.png`;
 	const price =
 		item.metrics.market_data.price_usd < 1.01
@@ -47,6 +48,12 @@ const WatchListItem = ({ item }) => {
 					</Text>
 				</View>
 			</View>
+			<FontAwesome
+				name={match ? 'bookmark' : 'bookmark-o'}
+				size={24}
+				color='black'
+				onPress={() => updateWatchlistData(match, item.symbol)}
+			/>
 		</View>
 	);
 };
@@ -68,6 +75,7 @@ const styles = StyleSheet.create({
 	leftdetailsContainer: {
 		alignSelf: 'flex-start',
 		marginTop: 2,
+		marginRight: 10,
 	},
 	rate: {
 		textAlign: 'center',
