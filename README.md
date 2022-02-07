@@ -198,7 +198,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [Rahul Sharma](https://rahulsharma.vercel.app/) - rahul2702sharma@gmail.com
+[Rahul Sharma](https://rahulsharma.vercel.app/) - acmcss@pec.edu.in - rahul2702sharma@gmail.com
 
 Project Link: [https://github.com/PEC-CSS/Stock-Watchlist](https://github.com/PEC-CSS/Stock-Watchlist)
 
