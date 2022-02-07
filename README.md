@@ -198,7 +198,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [Rahul Sharma](https://rahulsharma.vercel.app/) - rahul2702sharma@gmail.com
 
 Project Link: [https://github.com/PEC-CSS/Stock-Watchlist](https://github.com/PEC-CSS/Stock-Watchlist)
 
@@ -236,7 +236,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-shield]: https://img.shields.io/github/license/PEC-CSS/Stock-Watchlist?style=for-the-badge
 [license-url]: https://github.com/PEC-CSS/Stock-Watchlist/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-<!-- [linkedin-url]: https://linkedin.com/in/othneildrew -->
+[linkedin-url]: https://www.linkedin.com/in/rahul5430/
 [product-screenshot-loginScreen]: assets/loginScreen.gif
 [product-screenshot-stockScreenAndWatchlist]: assets/stockScreenAndWatchlist.gif
 [product-screenshot-aboutAndProfileScreen]: assets/aboutAndProfileScreen.gif
