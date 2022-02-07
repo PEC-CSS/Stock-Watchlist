@@ -69,10 +69,12 @@
 [![Stock Screen And Watchlist Screen Shot][product-screenshot-stockScreenAndWatchlist]](https://example.com)
 [![About and Profile Screen Screen Shot][product-screenshot-aboutAndProfileScreen]](https://example.com)
 [![Search Screen Screen Shot][product-screenshot-searchScreen]](https://example.com) -->
-<img src='assets/loginScreen.gif' width='300' />
-<img src='assets/stockScreenAndWatchlist.gif' width='300' />
-<img src='assets/aboutAndProfileScreen.gif' width='300' />
-<img src='assets/searchScreen.gif' width='300' />
+<p align='middle'>
+  <img src='assets/loginScreen.gif' width='200' />
+  <img src='assets/stockScreenAndWatchlist.gif' width='200' />
+  <img src='assets/aboutAndProfileScreen.gif' width='200' />
+  <img src='assets/searchScreen.gif' width='200' />
+</p>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
