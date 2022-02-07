@@ -65,18 +65,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Login Screen Screen Shot][product-screenshot-loginScreen]](https://example.com)
+[![Stock Screen And Watchlist Screen Shot][product-screenshot-stockScreenAndWatchlist]](https://example.com)
+[![About and Profile Screen Screen Shot][product-screenshot-aboutAndProfileScreen]](https://example.com)
+[![Search Screen Screen Shot][product-screenshot-searchScreen]](https://example.com) -->
+<img src='assets/loginScreen.gif' width='300' />
+<img src='assets/stockScreenAndWatchlist.gif' width='300' />
+<img src='assets/aboutAndProfileScreen.gif' width='300' />
+<img src='assets/searchScreen.gif' width='300' />
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -106,7 +103,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Below is an example of how you can install and set up your app._
 
 <!-- 1. Get a free API Key at [https://example.com](https://example.com) -->
 1. Clone the repo
@@ -144,7 +141,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 - [x] Add Changelog
 - [x] Add back to top links
@@ -152,9 +149,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
     - [ ] Chinese
-    - [ ] Spanish
+    - [ ] Spanish -->
+<!-- CONTRIBUTORS -->
+## Contributors
+This project exists thanks to all the people who contribute. [<a href="#contributing">Contributing</a>].
 
-See the [open issues](https://github.com/PEC-CSS/Stock-Watchlist/issues) for a full list of proposed features (and known issues).
+<a href="https://github.com/PEC-CSS/Stock-Watchlist/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=PEC-CSS/Stock-Watchlist" />
+</a>
+
+<!-- See the [open issues](https://github.com/PEC-CSS/Stock-Watchlist/issues) for a full list of proposed features (and known issues). -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -205,14 +209,12 @@ Project Link: [https://github.com/PEC-CSS/Stock-Watchlist](https://github.com/PE
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
+* [React Native docs](https://reactnative.dev/docs/getting-started)
+* [Expo Docs](https://docs.expo.dev/)
+* [Messari API](https://messari.io/api)
+* [Let's build Tinder 2.0 with REACT NATIVE! (Messaging, ContextAPI, Tailwind, Google Auth, Firebase)](https://www.youtube.com/watch?v=qJaFIGjyRms)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [othneildrew / Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -232,5 +234,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-shield]: https://img.shields.io/github/license/PEC-CSS/Stock-Watchlist?style=for-the-badge
 [license-url]: https://github.com/PEC-CSS/Stock-Watchlist/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-<!-- [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png -->
+<!-- [linkedin-url]: https://linkedin.com/in/othneildrew -->
+[product-screenshot-loginScreen]: assets/loginScreen.gif
+[product-screenshot-stockScreenAndWatchlist]: assets/stockScreenAndWatchlist.gif
+[product-screenshot-aboutAndProfileScreen]: assets/aboutAndProfileScreen.gif
+[product-screenshot-searchScreen]: assets/searchScreen.gif
