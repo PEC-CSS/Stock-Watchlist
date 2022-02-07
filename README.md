@@ -70,10 +70,10 @@
 [![About and Profile Screen Screen Shot][product-screenshot-aboutAndProfileScreen]](https://example.com)
 [![Search Screen Screen Shot][product-screenshot-searchScreen]](https://example.com) -->
 <p align='middle'>
-  <img src='assets/loginScreen.gif' width='200' />
-  <img src='assets/stockScreenAndWatchlist.gif' width='200' />
-  <img src='assets/aboutAndProfileScreen.gif' width='200' />
-  <img src='assets/searchScreen.gif' width='200' />
+  <img src='assets/loginScreen.gif' alt='Login Screen' width='200' />
+  <img src='assets/stockScreenAndWatchlist.gif' alt='Stock Screen and Watchlist' width='200' />
+  <img src='assets/aboutAndProfileScreen.gif' alt='About and Profile Screen' width='200' />
+  <img src='assets/searchScreen.gif' alt='Search Screen' width='200' />
 </p>
 
 
