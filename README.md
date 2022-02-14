@@ -1,7 +1,5 @@
 <div id="top"></div>
 
-
-
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -20,10 +18,10 @@
   <h3 align="center">Stock-Watchlist</h3>
 
   <p align="center">
-    Free to use. Ad free. Completly open-source Stock Watchlist Application
-    <br/>
-    <a href="https://github.com/PEC-CSS/Stock-Watchlist"><strong>Explore the docs »</strong></a>
-    <br />
+    <p>Completly Open-Source | Free To Use | Ad-Free</p>
+<p>Asset Watchlist Application for Stocks (NSE & BSE), Cryptocurrencies, Options and Indexes.</p> 
+    
+  <a href="https://github.com/PEC-CSS/Stock-Watchlist"><strong>Explore the docs »</strong></a>
     <br />
     <a href="https://github.com/PEC-CSS/Stock-Watchlist">View Demo</a>
     ·
@@ -77,17 +75,10 @@
 </p>
 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 ### Built With
-
-* [React Native](https://reactnative.dev/)
-* [Expo](https://expo.dev/)
-* [Firebase](https://firebase.google.com/)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /></a> &nbsp; 
+<a href="https://expo.dev//"><img src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white" /></a> &nbsp;
+<a href="https://firebase.google.com///"><img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" /></a>
 
 
 
@@ -121,9 +112,6 @@ _Below is an example of how you can install and set up your app._
    const API_KEY = 'ENTER YOUR API';
    ``` -->
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -137,8 +125,6 @@ _Below is an example of how you can install and set up your app._
   - Mobile - Scan the QR Code. (make sure Expo Go app is installed on your phone)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -160,9 +146,7 @@ This project exists thanks to all the people who contribute. [<a href="#contribu
   <img src="https://contrib.rocks/image?repo=PEC-CSS/Stock-Watchlist" />
 </a>
 
-<!-- See the [open issues](https://github.com/PEC-CSS/Stock-Watchlist/issues) for a full list of proposed features (and known issues). -->
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+See the [open issues](https://github.com/PEC-CSS/Stock-Watchlist/issues) for a full list of proposed features (and known issues).
 
 
 
@@ -182,18 +166,11 @@ Don't forget to give the project a star! Thanks again!
 
 Be sure to read the [contribution guidelines](CONTRIBUTING.md) before contributing.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -201,10 +178,6 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 [Rahul Sharma](https://rahulsharma.vercel.app/) - acmcss@pec.edu.in - rahul2702sharma@gmail.com
 
 Project Link: [https://github.com/PEC-CSS/Stock-Watchlist](https://github.com/PEC-CSS/Stock-Watchlist)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
