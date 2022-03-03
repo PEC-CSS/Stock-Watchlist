@@ -101,9 +101,9 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
-		setLoading(true);
 		console.log('response');
 		if (response?.type === 'success') {
+			setLoading(true);
 			console.log(response);
 			const { idToken, accessToken } = response.authentication;
 			getUserData(idToken, accessToken);
