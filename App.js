@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import React from 'react';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import { NavigationContainer } from '@react-navigation/native';

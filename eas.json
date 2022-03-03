@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 0.47.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "API_KEY": "AIzaSyDyjTYFGvcM7PM9D0O_IzEYG5bm2kgoGBY",
+        "AUTH_DOMAIN": "stock-watchlist-pec.firebaseapp.com",
+        "PROJECT_ID": "stock-watchlist-pec",
+        "STORAGE_BUCKET": "stock-watchlist-pec.appspot.com",
+        "MESSAGING_SENDER_ID": "316148951749",
+        "APP_ID": "1:316148951749:web:3fed8a95e649e78d605eac",
+        "MEASUREMENT_ID": "G-BQMYPTRNNX",
+        "ANDROID_CLIENT_ID": "316148951749-eg5o8km0k13u03b8r32phi6v6f8vr3dn.apps.googleusercontent.com",
+        "IOS_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
+        "ANDROID_STANDALONE_APP_CLIENT_ID": "316148951749-lj3gsji24t5tb07eqjen9ov3jrpvgcjp.apps.googleusercontent.com",
+        "IOS_STANDALONE_APP_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
+        "EXPO_CLIENT_ID": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
+        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "API_KEY": "AIzaSyDyjTYFGvcM7PM9D0O_IzEYG5bm2kgoGBY",
+        "AUTH_DOMAIN": "stock-watchlist-pec.firebaseapp.com",
+        "PROJECT_ID": "stock-watchlist-pec",
+        "STORAGE_BUCKET": "stock-watchlist-pec.appspot.com",
+        "MESSAGING_SENDER_ID": "316148951749",
+        "APP_ID": "1:316148951749:web:3fed8a95e649e78d605eac",
+        "MEASUREMENT_ID": "G-BQMYPTRNNX",
+        "ANDROID_CLIENT_ID": "316148951749-eg5o8km0k13u03b8r32phi6v6f8vr3dn.apps.googleusercontent.com",
+        "IOS_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
+        "ANDROID_STANDALONE_APP_CLIENT_ID": "316148951749-lj3gsji24t5tb07eqjen9ov3jrpvgcjp.apps.googleusercontent.com",
+        "IOS_STANDALONE_APP_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
+        "EXPO_CLIENT_ID": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
+        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}

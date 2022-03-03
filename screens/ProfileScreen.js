@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import useAuth, { AuthProvider } from '../hooks/useAuth';
 import Constants from 'expo-constants';
 import Logout from '../shared/buttonLogout';
 import Header from '../components/header/headerLoginPage';
 import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 import UserComponent from '../components/profile';
 
 export default function ProfileScreen() {
@@ -31,6 +32,7 @@ export default function ProfileScreen() {
 				</View>
 			</View>
 			<UserComponent user={user} />
+			<StatusBar backgroundColor='#11468f' style='light' />
 		</SafeAreaView>
 	);
 }

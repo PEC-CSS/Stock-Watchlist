@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { Button, StyleSheet, View, Text, Image, Alert } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import FlatButton from '../shared/button';
 import LoginScreen from './LoginScreen';
@@ -8,7 +9,18 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 const IntroScreen = () => {
 	const [showRealApp, setshowRealApp] = useState(false);
-	const { signInWithGoogle, loading } = useAuth();
+	// const { signInWithGoogle, loading, error } = useAuth();
+	const { request, promptAsync, loading, error } = useAuth();
+
+	const createAlert = () => {
+		Alert.alert('Error', `${error}`, [
+			{
+				text: 'Cancel',
+				style: 'cancel',
+			},
+			{ text: 'OK' },
+		]);
+	};
 
 	const RenderItem = ({ item }) => {
 		return (
@@ -32,8 +44,24 @@ const IntroScreen = () => {
 						</Text>
 						<FlatButton
 							text='Sign In With Google'
-							onPress={signInWithGoogle}
+							// onPress={signInWithGoogle}
+							onPress={() => {
+								promptAsync({
+									useProxy: false,
+									showInRecents: true,
+								});
+							}}
 						/>
+						{/* <Button
+							disabled={!request}
+							title='login'
+							onPress={() => {
+								promptAsync({
+									useProxy: false,
+									showInRecents: true,
+								});
+							}}
+						/> */}
 					</View>
 				)}
 			</View>
@@ -57,6 +85,8 @@ const IntroScreen = () => {
 					showDoneButton={false}
 				/>
 			)}
+			<StatusBar backgroundColor='#8cd0e2' style='dark' />
+			{error ? createAlert() : null}
 		</>
 	);
 };
