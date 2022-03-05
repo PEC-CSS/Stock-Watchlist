@@ -8,6 +8,7 @@ import {
 	ScrollView,
 	Linking,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -115,6 +116,7 @@ export default function AboutScreen() {
 					/>
 				</View>
 			</ScrollView>
+			<StatusBar backgroundColor='#11468f' style='light' />
 		</SafeAreaView>
 	);
 }

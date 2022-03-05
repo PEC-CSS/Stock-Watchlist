@@ -5,6 +5,7 @@ import {
 	SafeAreaView,
 	StyleSheet,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import {
 	doc,
 	getDoc,
@@ -89,6 +90,9 @@ export default function StockScreen() {
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
 			.catch((error) => console.log(error));
 		// .finally(() => console.log(cryptoData));
+		getDoc(docRef).then((docSnap) => {
+			setWatchlistData(docSnap.data().watchlist);
+		});
 	}, [a]);
 
 	const onRefresh = useCallback(() => {
@@ -160,6 +164,7 @@ export default function StockScreen() {
 					/>
 				</>
 			)}
+			<StatusBar backgroundColor='#11468f' style='light' />
 		</SafeAreaView>
 	);
 }

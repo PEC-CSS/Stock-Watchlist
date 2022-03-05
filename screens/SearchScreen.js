@@ -6,6 +6,7 @@ import {
 	StyleSheet,
 	View,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import {
 	doc,
 	getDoc,
@@ -90,6 +91,9 @@ const SearchScreen = (props) => {
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
 			.catch((error) => console.log(error));
 		// .finally(() => console.log(cryptoData));
+		getDoc(docRef).then((docSnap) => {
+			setWatchlistData(docSnap.data().watchlist);
+		});
 	}, [a]);
 
 	const onRefresh = useCallback(() => {
@@ -139,6 +143,7 @@ const SearchScreen = (props) => {
 					/>
 				)}
 			</View>
+			<StatusBar backgroundColor='#11468f' style='light' />
 		</SafeAreaView>
 	);
 };

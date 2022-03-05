@@ -101,6 +101,9 @@ const WatchList = () => {
 			.then((jsonResponse) => setCrytpoData(jsonResponse))
 			.catch((error) => console.log(error));
 		// .finally(() => console.log(cryptoData));
+		getDoc(docRef).then((docSnap) => {
+			setWatchlistData(docSnap.data().watchlist);
+		});
 	}, [a]);
 
 	const onRefresh = useCallback(() => {

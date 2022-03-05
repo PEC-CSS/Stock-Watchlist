@@ -7,6 +7,45 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:316148951749:android:4b32f9f6d8137bda605eac",
+        "android_client_info": {
+          "package_name": "com.stockwatchlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlaYemjd3RU6WzFNFKKga1hMymcDRCyB4"
+        },
+        {
+          "current_key": "AIzaSyDMLiuMt15blyfg4Mwx3HOmLmfiNF2Ip5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "316148951749-8u2uof18venstiufjg0q4uv0hnp1i5lh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.stockwatchlist"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:316148951749:android:2f00fc308fd3834c605eac",
         "android_client_info": {
           "package_name": "host.exp.exponent"
@@ -28,6 +67,9 @@
       ],
       "api_key": [
         {
+          "current_key": "AIzaSyBlaYemjd3RU6WzFNFKKga1hMymcDRCyB4"
+        },
+        {
           "current_key": "AIzaSyDMLiuMt15blyfg4Mwx3HOmLmfiNF2Ip5I"
         }
       ],
@@ -39,10 +81,10 @@
               "client_type": 3
             },
             {
-              "client_id": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
+              "client_id": "316148951749-8u2uof18venstiufjg0q4uv0hnp1i5lh.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "host.exp.exponent"
+                "bundle_id": "com.stockwatchlist"
               }
             }
           ]

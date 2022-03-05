@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import Header from '../components/header/headerLoginPage';
 import WatchList from '../components/watchlist';
@@ -9,6 +10,7 @@ const WatchListScreen = () => {
 		<SafeAreaView style={styles.screen}>
 			<Header />
 			<WatchList />
+			<StatusBar backgroundColor='#11468f' style='light' />
 		</SafeAreaView>
 	);
 };
