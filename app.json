@@ -35,7 +35,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "config" : {
+      "config": {
         "googleSignIn": {
           "apiKey": "AIzaSyBlaYemjd3RU6WzFNFKKga1hMymcDRCyB4",
           "certificateHash": "53C960C9BAD9A5C8FE338EED1BD26F80099F55C1"
@@ -46,6 +46,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "fe45b032-6d12-4348-b3f2-dfeb5be7b0e4"
+      }
     }
   }
 }

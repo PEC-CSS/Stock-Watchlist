@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, View, Text, Image, Alert } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
+import { PROXY } from '@env';
 import FlatButton from '../shared/button';
 import LoginScreen from './LoginScreen';
 import useAuth from '../hooks/useAuth';
@@ -47,7 +48,7 @@ const IntroScreen = () => {
 							// onPress={signInWithGoogle}
 							onPress={() => {
 								promptAsync({
-									useProxy: false,
+									useProxy: PROXY === 'true' ? true : false,
 									showInRecents: true,
 								});
 							}}
