@@ -107,10 +107,10 @@ _Below is an example of how you can install and set up your app._
    ```sh
    npm install
    ```
-<!-- 4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ``` -->
+   or
+   ```sh
+   npm install --legacy-peer-deps
+   ```
 
 
 <!-- USAGE EXAMPLES -->
@@ -118,11 +118,15 @@ _Below is an example of how you can install and set up your app._
 
 - Start the project
   ```sh
-  npm start
+  npx expo start
   ```
 - To see changes:
   - Browser - click on <b>Run in web browser</b> and use <b>'Ctrl+Shift+M'</b> to toggle mobile view
   - Mobile - Scan the QR Code. (make sure Expo Go app is installed on your phone)
+- Create a new build
+  ```sh
+  eas build --profile preview --platform android
+  ```
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

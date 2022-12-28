@@ -14,7 +14,8 @@ const TabNavigator = () => {
 		<Tab.Navigator
 			shifting={true}
 			initialRouteName='Stocks'
-			activeColor='white'
+			activeColor='#ffffff'
+			inactiveColor='#8ea1c5'
 			labelStyle={{ fontSize: 15 }}
 			style={{ backgroundColor: '#0f004c' }}
 			barStyle={{ backgroundColor: '#11468f' }}

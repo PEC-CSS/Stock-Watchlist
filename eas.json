@@ -19,7 +19,8 @@
         "ANDROID_STANDALONE_APP_CLIENT_ID": "316148951749-lj3gsji24t5tb07eqjen9ov3jrpvgcjp.apps.googleusercontent.com",
         "IOS_STANDALONE_APP_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
         "EXPO_CLIENT_ID": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
-        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9"
+        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9",
+        "PROXY": "false"
       }
     },
     "preview": {
@@ -37,7 +38,8 @@
         "ANDROID_STANDALONE_APP_CLIENT_ID": "316148951749-lj3gsji24t5tb07eqjen9ov3jrpvgcjp.apps.googleusercontent.com",
         "IOS_STANDALONE_APP_CLIENT_ID": "316148951749-f92vbdc04mughtfsb8feimdr950aedc1.apps.googleusercontent.com",
         "EXPO_CLIENT_ID": "316148951749-qhh8q0ebn8dd5b0hfmlsmokom2bqrlpb.apps.googleusercontent.com",
-        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9"
+        "X_MESSARI_API_KEY": "9f3cc221-44ec-460a-bf7a-8576d8e6dcf9",
+        "PROXY": "false"
       },
       "android": {
         "buildType": "apk"
