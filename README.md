@@ -160,16 +160,116 @@ See the [open issues](https://github.com/PEC-CSS/Stock-Watchlist/issues) for a f
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 Be sure to read the [contribution guidelines](CONTRIBUTING.md) before contributing.
 
+Follow below steps to make your contribution count.
+
+## 🖱️ How to Contribute 
+
+If you think that you can add a new feature or want to fix a bug, we invite you to contribute to Stock-Watchlist and make this project better. To start contributing, follow the below instructions:
+
+1. Create a folder at your desire location (usually at your desktop).
+
+2. Open Git Bash Here
+
+
+3. [Fork](https://github.com/PEC-CSS/Stock-Watchlist) the project. Click on the <a href="https://github.com/PEC-CSS/Stock-Watchlist/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="15" width="15"></a> icon in the top right to get started.
+
+4. Clone your forked repository of project.
+
+```bash
+git clone https://github.com/PEC-CSS/Stock-Watchlist.git
+```
+
+5. Navigate to the project directory.
+
+```bash
+cd Stock-Watchlist
+```
+
+6. Add a reference(remote) to the original repository.
+
+```bash
+git remote add upstream https://github.com/PEC-CSS/Stock-Watchlist.git
+```
+
+7. Check the remotes for this repository.
+
+```bash
+git remote -v
+```
+
+8. Always take a pull from the upstream repository to your main branch to keep it updated as per the main project repository.
+
+```bash
+git pull upstream main
+```
+
+9. Create a new branch(prefer a branch name that relates to your assigned issue).
+
+```bash
+git checkout -b <YOUR_BRANCH_NAME>
+```
+
+10. Perform your desired changes to the code base.
+
+11. Check your changes.
+
+```bash
+git status
+```
+
+```bash
+git  diff
+```
+
+12. Stage your changes.
+
+```bash
+git add . <\files_that_you_made_changes>
+```
+
+13. Commit your changes.
+
+```bash
+git commit -m "Commit Message"
+```
+
+14. Push the committed changes in your feature branch to your remote repository.
+
+```bash
+git push -u origin <your_branch_name>
+```
+
+15. To create a pull request, click on `compare and pull requests`.
+
+16. Add an appropriate title and description to your PR explaining your changes.
+
+17. Click on `Create pull request`.
+
+Congratulations🎉, you have made a PR to the Stock-Watchlist.
+Wait for your submission to be accepted and your PR to be merged by a maintainer.
+
+## 🫴 How to Do Your First Pull Request?  
+   ***(We are providing some Resource from where you can Learn)***
+
+1. [Learn from Video](https://www.youtube.com/watch?v=nkuYH40cjo4)
+2. [Open Source Guide](https://opensource.guide/how-to-contribute/)
+
+## Code of Conduct
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+
+## 🙏🏽 Support
+
+This project needs a star️ from you. Don't forget to leave a star✨
+Follow my Github for content
+<br>
+<br>
+<hr>
+<h6 align="center">© PEC ACM CSS
+<br>
 
 <!-- LICENSE -->
 ## License
