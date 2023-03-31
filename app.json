@@ -1,61 +1,59 @@
 {
-  "expo": {
-    "name": "Stock Watchlist",
-    "slug": "stock-watchlist",
-    "scheme": "stockwatchlist",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icons/android/playstore-icon.png",
-    "androidStatusBar": {
-      "barStyle": "dark-content",
-      "backgroundColor": "#00000000"
-    },
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.stockwatchlist",
-      "config": {
-        // "googleSignIn": {
-        //   "reservedClientId": "com.googleusercontent.apps.316148951749-8u2uof18venstiufjg0q4uv0hnp1i5lh"
-        // }
-      }
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/android/playstore-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "config": {
-        // "googleSignIn": {
-        //   "apiKey": "AIzaSyBlaYemjd3RU6WzFNFKKga1hMymcDRCyB4",
-        //   "certificateHash": "53C960C9BAD9A5C8FE338EED1BD26F80099F55C1"
-        // }
-      },
-      "splash": {
-        "backgroundColor": "#FFFFFF",
-        "image": "./assets/splash.png",
-        "resizeMode": "contain"
-      },
-      "softwareKeyboardLayoutMode": "pan",
-      "package": "com.stockwatchlist"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "fe45b032-6d12-4348-b3f2-dfeb5be7b0e4"
-      }
-    }
-  }
+	"expo": {
+		"name": "Stock Watchlist",
+		"slug": "stock-watchlist",
+		"scheme": "stock-watchlist",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icons/android/playstore-icon.png",
+		"androidStatusBar": {
+			"barStyle": "dark-content",
+			"backgroundColor": "#00000000"
+		},
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.stockwatchlist",
+			"config": {
+				// "googleSignIn": {
+				//   "reservedClientId": "com.googleusercontent.apps.316148951749-8u2uof18venstiufjg0q4uv0hnp1i5lh"
+				// }
+			}
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/icons/android/playstore-icon.png",
+				"backgroundColor": "#FFFFFF"
+			},
+			"config": {
+				// "googleSignIn": {
+				//   "apiKey": "AIzaSyBlaYemjd3RU6WzFNFKKga1hMymcDRCyB4",
+				//   "certificateHash": "53C960C9BAD9A5C8FE338EED1BD26F80099F55C1"
+				// }
+			},
+			"splash": {
+				"backgroundColor": "#FFFFFF",
+				"image": "./assets/splash.png",
+				"resizeMode": "contain"
+			},
+			"softwareKeyboardLayoutMode": "pan",
+			"package": "com.stockwatchlist"
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "fe45b032-6d12-4348-b3f2-dfeb5be7b0e4"
+			}
+		}
+	}
 }
